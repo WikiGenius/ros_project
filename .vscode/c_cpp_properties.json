@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/muhammed/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/muhammed/catkin_ws/src/quiz/include/**",
+        "/home/muhammed/catkin_ws/src/ros_essentials_cpp/include/**",
+        "/home/muhammed/catkin_ws/src/ros_me_basics/include/**",
+        "/home/muhammed/catkin_ws/src/usb_cam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

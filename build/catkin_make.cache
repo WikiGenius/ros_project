@@ -1,0 +1,2 @@
+yolo_bot
+-DCATKIN_DEVEL_PREFIX=/home/muhammed/Main/programming/graduation_project/BETA/sign-detection-module/ros_project/devel -DCMAKE_INSTALL_PREFIX=/home/muhammed/Main/programming/graduation_project/BETA/sign-detection-module/ros_project/install -G Unix Makefiles

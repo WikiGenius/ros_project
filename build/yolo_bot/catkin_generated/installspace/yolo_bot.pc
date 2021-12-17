@@ -1,0 +1,8 @@
+prefix=/home/muhammed/Main/programming/graduation_project/BETA/sign-detection-module/ros_project/install
+
+Name: yolo_bot
+Description: Description of yolo_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
