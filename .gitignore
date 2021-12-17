@@ -1,0 +1,31 @@
+# Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.heic
+*.JPG
+*.JPEG
+*.PNG
+*.BMP
+*.TIF
+*.TIFF
+*.HEIC
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.data
+*.json
+
+*.cfg
+!cfg/yolov3*.cfg
+
+
+
+
+# Datasets -------------------------------------------------------------------------------------------------------------
+src/yolo_bot/runs/detect
+src/yolo_bot/data/*
