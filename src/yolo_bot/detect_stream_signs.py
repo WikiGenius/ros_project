@@ -46,10 +46,13 @@ class DetectSigns:
     def __init__(self):
         # CV bridge object
         self.cvBridge = CvBridge()
-        self.topic_in_image = '/image_publisher_1639846134116251671/image_raw/compressed'
+        # self.topic_in_image = '/image_publisher_1639846134116251671/image_raw/compressed'
+        self.topic_in_image = '/realsense/color/image_raw/compressed'
         self.topic_out_image = '/camera/image_output/compressed'
         self.topic_out_planner = '/class_name'
         self.debug = False
+        self.total_time_process = time_sync()
+
         opt = self.parse_opt()
         self.define_variables(**vars(opt))
 
@@ -58,11 +61,14 @@ class DetectSigns:
         self.pub_sign = rospy.Publisher(self.topic_out_planner, Int16, queue_size=1)
 
     def _img_callback(self, msg):
+        self.total_time_process = time_sync() - self.total_time_process
+        if self.debug:
+            print("image subscribed")
+            print(f"total_time_process : {round(self.total_time_process)}s --- {1/self.total_time_process:.2f} FPS") 
         # converts compressed image to opencv image
         np_img_input = np.frombuffer(msg.data, np.uint8)
         cv_img_input = cv2.imdecode(np_img_input, cv2.IMREAD_COLOR)
-        if self.debug:
-            print("image subscribed")
+            
         # ==========================================================================
         cv_img_output = self.run(cv_img_input)
         # Yolo process on image stream from gazebo
@@ -115,6 +121,7 @@ class DetectSigns:
         self.device = select_device(device)
         self.model = DetectMultiBackend(self.weights, device=self.device, dnn=dnn)
         self.stride, self.names, self.pt, self.jit, onnx, engine = self.model.stride, self.model.names, self.model.pt, self.model.jit, self.model.onnx, self.model.engine
+        self.names[1] = 'Speed limit (16km/h)'
         self.imgsz = check_img_size(imgsz, s=self.stride)  # check image size
 
         self.dt, self.seen = [0.0, 0.0, 0.0], 0
@@ -203,7 +210,8 @@ class DetectSigns:
                         if self.save_crop:
                             save_one_box(xyxy, imc, file=self.save_dir / 'crops' / self.names[c], BGR=True)
             # Print time (inference-only)
-            LOGGER.info(f'{s} Done. ({t3 - t2:.3f}s)')
+            # LOGGER.info(f'{s} detection time. ({t3 - t2:.3f}s)')
+            print(f'{s} detection time per frame. ({(t3 - t2)*1000:.3f}ms)  -- {int(1/(t3 - t2))} FPS')
             # Stream results
             im0 = annotator.result()
             if self.view_img:
