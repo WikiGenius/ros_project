@@ -169,7 +169,7 @@ def load_stream_images(img0, img_size=640, stride=32, auto=True):
     img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
     img = np.ascontiguousarray(img)
 
-    return img, img0
+    return img
     
 class LoadImages:
     # YOLOv5 image/video dataloader, i.e. `python detect.py --source image.jpg/vid.mp4`

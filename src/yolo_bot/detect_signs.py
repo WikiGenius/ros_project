@@ -269,13 +269,12 @@ class DetectSigns:
     def create_node(self):
 
         try:
+            # Looping
             rospy.spin()
         except:
             print("Shutting down ROS Image feature detector module")
         cv2.destroyAllWindows()
-        # Looping
-        rospy.spin()
-
+        
 
 if __name__ == '__main__':
     # Node initialization
