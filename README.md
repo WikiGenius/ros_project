@@ -16,9 +16,13 @@ Makue sure the weights existed in src/yolo_bot/runs/weghts data folder.
 
 
 ```bash
-bash detect_signs.sh;
+./detect_streams_signs;
 ```
 
-The project publish signs_names to planner_node
+The project publish signs_names to planner_node and subscribe from Gazebo
 
 That is my account [Github](https://github.com/WikiGenius)
+
+That is my Website [WikiGenius](https://muhammedelyamani.blogspot.com/)
+
+
