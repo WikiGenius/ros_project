@@ -154,7 +154,23 @@ class _RepeatSampler:
         while True:
             yield from iter(self.sampler)
 
+def load_stream_images(img0, img_size=640, stride=32, auto=True):
 
+    img_size = img_size
+    stride = stride
+    auto = auto
+
+    assert img0 is not None, f'Image Not Found'
+
+    # Padded resize
+    img = letterbox(img0, img_size, stride=stride, auto=auto)[0]
+
+    # Convert
+    img = img.transpose((2, 0, 1))[::-1]  # HWC to CHW, BGR to RGB
+    img = np.ascontiguousarray(img)
+
+    return img, img0
+    
 class LoadImages:
     # YOLOv5 image/video dataloader, i.e. `python detect.py --source image.jpg/vid.mp4`
     def __init__(self, path, img_size=640, stride=32, auto=True):
