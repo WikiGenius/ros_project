@@ -30,6 +30,10 @@
 # Datasets -------------------------------------------------------------------------------------------------------------
 src/yolo_bot/runs/detect
 src/yolo_bot/data/*
+
+# weights
+src/yolo_bot/runs/train/yolov5s_results/
+
 # launch
 src/yolo_bot/launch/
 
