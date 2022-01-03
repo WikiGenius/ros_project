@@ -30,3 +30,14 @@
 # Datasets -------------------------------------------------------------------------------------------------------------
 src/yolo_bot/runs/detect
 src/yolo_bot/data/*
+# launch
+src/yolo_bot/launch/
+
+# files
+cmd.txt
+common_type_images
+debug.txt
+husky.sh
+husky_topics.txt
+info_publish_video.txt
+publish_image_view.sh

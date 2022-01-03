@@ -282,7 +282,7 @@ class DetectSigns:
 
 if __name__ == '__main__':
     # Node initialization
-    rospy.init_node('detect-signs')
+    rospy.init_node('detect_signs')
 
     detect_signs = DetectSigns()
 

@@ -1,6 +1,0 @@
-roslaunch darknet_ros world.launch
-roslaunch darknet_ros robot.launch
-#rosrun darknet_ros send_req.py
-#rosrun darknet_ros sq.py
-roslaunch husky_viz view_robot.launch
-roslaunch husky_navigation move_base_mapless_demo.launch
