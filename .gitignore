@@ -2,6 +2,7 @@
 *.jpg
 *.jpeg
 *.png
+!assets/*.png
 *.bmp
 *.tif
 *.tiff
