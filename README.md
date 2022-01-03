@@ -47,9 +47,9 @@ rostopic echo /class_name;
 
 ![stop](./assets/stop.gif)
 
-<!-- ![rosgraph](./assets/rosgraph.png) -->
 
-<img src="./assets/rosgraph.png" alt="rosgraph" height="200"/>
+![rosgraph](./assets/rosgraph.png)
+
 
 The project publish signs_names to planner_node and subscribe from Gazebo
 
